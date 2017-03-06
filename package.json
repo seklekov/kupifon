@@ -1,0 +1,22 @@
+{
+  "name": "kupifon",
+  "version": "1.0.0",
+  "description": "kupifon.com webapp",
+  "main": "kupifon.js",
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/seklekov/kupifon.git"
+	}
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Yamahito",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
