@@ -2,11 +2,11 @@
   "name": "kupifon",
   "version": "1.0.0",
   "description": "kupifon.com webapp",
-  "main": "kupifon.js",
+  "main": "server.js",
   "repository": {
 	  "type": "git",
 	  "url": "git://github.com/seklekov/kupifon.git"
-	}
+	},
   "scripts": {
     "test": "test"
   },

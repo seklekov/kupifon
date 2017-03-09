@@ -7,21 +7,16 @@ var iPhone = [
   'iPhone 6',
   'iPhone 6plus',
 ];
-
+// use handlebars
 var handlebars = require('express-handlebars');
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+//set PORT for dev
 app.set('port', process.env.PORT || 3000);
 
+//set static
 app.use(express.static(__dirname + '/public'));
-
-// set 'showTests' context property if the querystring contains test=1
-app.use(function(req, res, next){
-	res.locals.showTests = app.get('env') !== 'production' &&
-		req.query.test === '1';
-	next();
-});
 
 app.get('/', function(req, res){
   res.render('home');
@@ -45,5 +40,5 @@ app.use(function(err, req, res, next){
 });
 
 app.listen(app.get('port'), function (){
-  console.log ('Сервер запущен на' + app.get('port') + 'Для завершения нажмите Cntl+C');
+  console.log ('Сервер запущен в режиме ' + app.get('env') + ' на ' + app.get('port') + ' Для завершения нажмите Cntl+C');
 });
