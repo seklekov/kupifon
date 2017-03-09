@@ -8,8 +8,8 @@
 	  "url": "git://github.com/seklekov/kupifon.git"
 	},
   "scripts": {
-    "test": "test"
-  },
+   "start": "node server"
+ },
   "author": "Yamahito",
   "license": "ISC",
   "dependencies": {
