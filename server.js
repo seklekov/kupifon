@@ -1,12 +1,6 @@
 var express = require('express');
 var app = express();
 
-var iPhone = [
-  'iPhone 5',
-  'iPhone 5S',
-  'iPhone 6',
-  'iPhone 6plus',
-];
 // use handlebars
 var handlebars = require('express-handlebars');
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));
@@ -15,16 +9,19 @@ app.set('view engine', 'handlebars');
 //set PORT for dev
 app.set('port', process.env.PORT || 3000);
 
+/**var credentials = require('./credentials.js');
+app.use(require('cookie-parser')(credentials.cookieSecret));
+app.use(require('express-session')({
+    resave: false,
+    saveUninitialized: false,
+    secret: credentials.cookieSecret,
+}));**/
+
 //set static
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res){
-  res.render('home');
-});
-
-app.get('/about', function(req, res){
-  res.render('about', {product: iPhone});
-});
+//add routes
+require('./routes.js')(app);
 
 //404 page
 app.use(function(req, res){

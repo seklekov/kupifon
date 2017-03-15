@@ -1,3 +1,6 @@
+# Ignore credentials
+credentials.js
+
 # Ignore npm packages
 node_modules
 
